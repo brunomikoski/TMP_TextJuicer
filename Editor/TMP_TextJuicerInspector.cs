@@ -48,6 +48,12 @@ namespace BrunoMikoski.TextJuicer
 
             serializedObject.ApplyModifiedProperties();
 
+            if (animationControlledSerializedProperty.boolValue)
+                return;
+
+            if (!Application.isPlaying)
+                return;
+
             if (!textJuicer.IsPlaying)
             {
                 if (GUILayout.Button("Play"))
