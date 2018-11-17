@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 namespace BrunoMikoski.TextJuicer
