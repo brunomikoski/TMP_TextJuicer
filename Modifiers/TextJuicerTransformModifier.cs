@@ -14,9 +14,6 @@ namespace BrunoMikoski.TextJuicer.Modifiers
         private AnimationCurve scaleCurve = new AnimationCurve( new Keyframe( 0, 0 ), new Keyframe( 1, 1 ) );
 
         [SerializeField]
-        private Vector3 scaleModifier;
-
-        [SerializeField]
         private bool applyOnX;
 
         [SerializeField]
@@ -86,17 +83,17 @@ namespace BrunoMikoski.TextJuicer.Modifiers
             {
                 if ( applyOnX )
                 {
-                    finalScale.x = scaleModifier.x * scaleCurve.Evaluate( characterData.Progress );
+                    finalScale.x = scaleCurve.Evaluate( characterData.Progress );
                 }
 
                 if ( applyOnY )
                 {
-                    finalScale.y = scaleModifier.y * scaleCurve.Evaluate( characterData.Progress );
+                    finalScale.y = scaleCurve.Evaluate( characterData.Progress );
                 }
 
                 if ( applyOnZ )
                 {
-                    finalScale.z = scaleModifier.z * scaleCurve.Evaluate( characterData.Progress );
+                    finalScale.z = scaleCurve.Evaluate( characterData.Progress );
                 }
             }
 

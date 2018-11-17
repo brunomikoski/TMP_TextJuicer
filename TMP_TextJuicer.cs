@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace BrunoMikoski.TextJuicer
 {
+    [ExecuteInEditMode]
     [AddComponentMenu( "UI/Text Juicer" )]
     [RequireComponent(typeof(TMP_Text))]
     public class TMP_TextJuicer : MonoBehaviour
@@ -79,6 +80,10 @@ namespace BrunoMikoski.TextJuicer
         private string cachedText = string.Empty;
 
         private bool isPlaying;
+        public bool IsPlaying
+        {
+            get { return isPlaying; }
+        }
 
         private bool updateGeometry;
         private bool updateVertexData;
@@ -122,10 +127,6 @@ namespace BrunoMikoski.TextJuicer
                 ApplyModifiers();
         }
 
-        private bool IsCharacterDataReady()
-        {
-            return charactersData != null;
-        }
         #endregion
 
         #region Interaction Methods
@@ -134,7 +135,6 @@ namespace BrunoMikoski.TextJuicer
             internalTime = 0;
         }
 
-        [ContextMenu("Play")]
         public void Play()
         {
             Play( true );
