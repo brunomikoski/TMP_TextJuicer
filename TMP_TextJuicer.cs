@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using BrunoMikoski.TextJuicer.Modifiers;
-using Paladin.Framework.Attributes;
 using TMPro;
 using UnityEngine;
 
@@ -34,7 +33,6 @@ namespace BrunoMikoski.TextJuicer
         }
 
         [SerializeField]
-        [HideIf( "animationControlled" )]
         private float duration = 1.0f;
 
         [SerializeField]
@@ -45,15 +43,12 @@ namespace BrunoMikoski.TextJuicer
         private float progress;
 
         [SerializeField]
-        [HideIf( "animationControlled" )]
         private bool playWhenReady = true;
 
         [SerializeField]
-        [HideIf( "animationControlled" )]
         private bool loop;
 
         [SerializeField]
-        [HideIf( "animationControlled" )]
         private bool playForever;
 
         [SerializeField]

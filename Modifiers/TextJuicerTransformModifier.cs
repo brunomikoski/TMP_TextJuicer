@@ -1,10 +1,8 @@
-﻿using Paladin.Framework.Attributes;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 namespace BrunoMikoski.TextJuicer.Modifiers
 {
-    
     [AddComponentMenu( "UI/Text Juicer Modifiers/Transform Modifier", 11 )]
     public sealed class TextJuicerTransformModifier : TextJuicerVertexModifier
     {
@@ -13,48 +11,38 @@ namespace BrunoMikoski.TextJuicer.Modifiers
         private bool animateScale;
 
         [SerializeField]
-        [ShowIf( "animateScale", true )]
         private AnimationCurve scaleCurve = new AnimationCurve( new Keyframe( 0, 0 ), new Keyframe( 1, 1 ) );
-        
+
         [SerializeField]
-        [ShowIf( "animateScale", true )]
         private Vector3 scaleModifier;
 
         [SerializeField]
-        [ShowIf( "animateScale", true )]
         private bool applyOnX;
 
         [SerializeField]
-        [ShowIf( "animateScale", true )]
         private bool applyOnY;
-        
+
         [SerializeField]
-        [ShowIf( "animateScale", true )]
         private bool applyOnZ;
-        
 
         [SerializeField]
         private bool animatePosition;
 
         [SerializeField]
-        [ShowIf( "animatePosition", true )]
         private Vector3 positionMultiplier;
 
         [SerializeField]
-        [ShowIf( "animatePosition", true )]
         private AnimationCurve positionCurve = new AnimationCurve( new Keyframe( 0, 0 ), new Keyframe( 1, 1 ) );
 
         [SerializeField]
         private bool animateRotation;
 
         [SerializeField]
-        [ShowIf( "animateRotation", true )]
         private AnimationCurve rotationCurve = new AnimationCurve( new Keyframe( 0, 0 ), new Keyframe( 1, 1 ) );
 
         [SerializeField]
-        [ShowIf( "animateRotation", true )]
         private Vector3 rotationMultiplier;
-        
+
         private bool modifyGeomery;
         private bool modifyVertex;
 
@@ -107,7 +95,7 @@ namespace BrunoMikoski.TextJuicer.Modifiers
                 }
 
                 if ( applyOnZ )
-                {                    
+                {
                     finalScale.z = scaleModifier.z * scaleCurve.Evaluate( characterData.Progress );
                 }
             }
