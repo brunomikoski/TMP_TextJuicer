@@ -65,6 +65,7 @@ namespace BrunoMikoski.TextJuicer
             float currentProgress = (time - startingTime) / totalAnimationTime;
             if ( !playForever )
                 currentProgress = Mathf.Clamp01( currentProgress );
+
             progress = currentProgress;
         }
     }

@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 namespace BrunoMikoski.TextJuicer.Modifiers
@@ -7,16 +6,15 @@ namespace BrunoMikoski.TextJuicer.Modifiers
     [RequireComponent(typeof(TMP_TextJuicer))]
     public abstract class TextJuicerVertexModifier : MonoBehaviour
     {
-        
+        private TMP_TextJuicer cachedTextJuicer;
+
         public abstract bool ModifyGeomery { get; }
         public abstract bool ModifyVertex { get; }
-
-        private TMP_TextJuicer cachedTextJuicer;
-        private TMP_TextJuicer TextJuicer
+        protected TMP_TextJuicer TextJuicer
         {
             get
             {
-                if ( cachedTextJuicer == null )
+                if (cachedTextJuicer == null)
                     cachedTextJuicer = GetComponent<TMP_TextJuicer>();
                 return cachedTextJuicer;
             }
@@ -27,7 +25,9 @@ namespace BrunoMikoski.TextJuicer.Modifiers
             TextJuicer.SetDirty();
         }
 
-        public abstract void ModifyCharacter( CharacterData characterData, TMP_Text textComponent, TMP_TextInfo textInfo,
-            TMP_MeshInfo[] meshInfo );
+        public abstract void ModifyCharacter(CharacterData characterData, TMP_Text textComponent,
+            TMP_TextInfo textInfo,
+            float progress,
+            TMP_MeshInfo[] meshInfo);
     }
 }

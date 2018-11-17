@@ -251,6 +251,7 @@ namespace BrunoMikoski.TextJuicer
                 vertexModifiers[i].ModifyCharacter( charactersData[info],
                                                     TextComponent,
                                                     textInfo,
+                                                    progress,
                                                     meshInfo );
             }
         }
